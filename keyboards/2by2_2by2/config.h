@@ -7,7 +7,7 @@
 #define PRODUCT_ID      0x2019
 #define DEVICE_VER		0x0001
 #define MANUFACTURER    Justerson
-#define PRODUCT         2by2
+#define PRODUCT         2by2_2by2
 
 /* key matrix size */
 #define MATRIX_ROWS 4
@@ -26,8 +26,8 @@
 #define DEBOUNCE 5
 
 /* added for custom split keyboard */
-// #define SPLIT_HAND_PIN B7
 #define MASTER_LEFT
 #define SOFT_SERIAL_PIN D0
-#define SPLIT_USB_DETECT
 
+/* might not be necessary, but just in case */
+#define SPLIT_USB_DETECT

@@ -5,24 +5,45 @@
 /* This is a shortcut to help you visually see your layout.
  *
  * The first section contains all of the arguments representing the physical
- * layout of the board and position of the Keys.
+ * layout of the board and position of the keys.
  *
  * The second converts the arguments into a two-dimensional array which
  * represents the switch matrix.
  */
 
 #define LAYOUT( \
-    K00,     K01, K02, K03, K04, K05, K06,        K07, K08, K09, K0a, K0b, K0c,     K0d \
-    K10,  K11, K12, K13, K14, K15, K16,         K17, K18, K19, K1a, K1b, K1c, K1d,  K1e \
-    K20,    K21, K22, K23, K24, K25, K26,         K27, K28, K29, K2a, K2b, K2c,     K2d \
-    K30,      K31, K32, K33, K34, K35, K36,         K37, K38, K39, K3a, K3b,   K3c, K3d \
-    K40,    K41,   K42,   K43,        K44,        K45,     K46,    K47,    K48,     K49 \
+    LH00, LH01, LH02, LH03, LH04, LH05, LH06, LH06,    RH00, RH01, RH02, RH03, RH04, RH05, RH06, RH07 \
+    LH10, LH11, LH12, LH13, LH14, LH15, LH16,          RH10, RH11, RH12, RH13, RH14, RH15, RH16, RH17 \
+    LH20, LH21, LH22, LH23, LH24, LH25, LH26,          RH20, RH21, RH22, RH23, RH24, RH25, RH26 \
+    LH30, LH31, LH32, LH33, LH34, LH35, LH36, LH37,    RH30, RH31, RH32, RH33, RH34, RH35, RH36 \
+    LH40, LH41, LH42, LH43, LH44,                      RH40, RH41, RH42, RH43, RH44, RH45 \
 ) \
 
 { \
-    { K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0a, K0b, K0c, K0d }, \
-    { K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1a, K1b, K1c, K1e }, \
-    { K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2a, K2b, K1d, K2d }, \
-    { K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K3a, K3b, K2c, K3d },  \
-    { K40, K41, K42, K43, XXX, K44, XXX, K45, XXX, K46, K47, K48, K3c, K49}   \
+    { LH00, LH01, LH02, LH03, LH04, LH05, LH06, LH07}, \
+    { LH10, LH11, LH12, LH13, LH14, LH15, LH16, XXXX}, \
+    { LH20, LH21, LH22, LH23, LH24, LH25, XXXX, LH26}, \
+    { LH30, LH31, LH32, LH33, LH34, LH35, LH36, LH37}, \
+    { LH40, LH41, XXXX, LH42, LH43, XXXX, LH44, XXXX}, \
+    { RH00, RH01, RH02, RH03, RH04, RH05, RH06, RH07}, \
+    { RH10, RH11, RH12, RH13, RH14, RH15, RH16, RH17}, \
+    { RH20, RH21, RH22, RH23, RH24, RH16, XXXX, RH26}, \
+    { RH30, RH31, RH32, XXXX, RH33, RH34, RH25, RH36}, \
+    { RH40, XXXX, RH41, RH42, RH43, RH35, RH44, RH45} \
 }
+
+/* LAYOUT
+ * ┌───┐                                           ┌───┐
+ * │USB│                                           │USB│
+ * ├───┴┬────┬────┬────┬────┬────┬────┬────┐     ┌─┴──┬┴───┬────┬────┬────┬────┬────┬────┐
+ * │LH00│LH01│LH02│LH03│LH04│LH05│LH06│LH07│     │RH00│RH01│RH02│RH03│RH04│RH05│RH06│RH07│
+ * ├────┼────┴─┬──┴─┬──┴─┬──┴─┬──┴─┬──┴─┬──┘   ┌─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴────┤
+ * │LH10│ LH11 │LH12│LH13│LH14│LH15│LH16│      │RH10│RH11│RH12│RH13│RH14│RH15│RH16│ RH17 │
+ * └──┬─┴──┬───┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┐   └─┬──┴─┬──┴─┬──┴─┬──┴─┬──┴─┬──┴─┬──┴──────┤
+ *    │LH20│ LH21 │LH22│LH23│LH24│LH25│LH26│     │RH20│RH21│RH22│RH23│RH24│RH25│  RH26   │
+ * ┌──┴─┬──┴─┬────┴─┬──┴─┬──┴─┬──┴─┬──┴─┬──┴─┐   └──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴────┬────┤
+ * │LH30│LH31│ LH32 │LH33│LH34│LH35│LH36│LH37│      │RH30│RH31│RH32│RH33│RH34│ RH35 │RH36│
+ * └──┬─┴──┬─┴────┬─┴────┼────┴─┬──┴────┴─┬──┘   ┌──┴────┴─┬──┴───┬┴───┬┴───┬┴───┬──┴─┬──┘
+ *    │LH40│ LH41 │ LH42 │ LH43 │  LH44   │      │  RH40   │ RH41 │RH42│RH43│RH44│RH45│
+ *    └────┴──────┴──────┴──────┴─────────┘      └─────────┴──────┴────┴────┴────┴────┘
+ */

@@ -31,3 +31,33 @@
 
 /* might not be necessary, but just in case */
 #define SPLIT_USB_DETECT
+
+// Left board
+
+// Column 1 - Pin 4 - PURPLE
+// - green wire/brown tape
+// - green wire/orange tape
+// Column 2 - Pin 5 - BROWN
+// - green wire/grey tape
+// - green wire/yellow tape
+// Row 1 - Pin 6 - RED
+// - blue wire/brown tape
+// - blue wire/grey tape
+// Row 2 - Pin 7 - GREEN
+// - blue wire/orange tape
+// - blue wire/yellow tape
+
+// Right board
+
+// Column 1 - Pin 4 - BLUE
+// - black wire/blue tape
+// - black wire/purple tape
+// Column 2 - Pin 5 - WHITE
+// - black wire/green tape
+// - black wire/red tape
+// Row 1 - Pin 6 - ORANGE
+// - red wire/blue tape
+// - red wire/green tape
+// Row 2 - Pin 7 - YELLOW
+// - red wire/purple tape
+// - red wire/red tape

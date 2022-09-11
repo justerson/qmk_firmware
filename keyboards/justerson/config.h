@@ -22,7 +22,7 @@
 
 // ProMicro pins of the columns, from left to right
 //                        A3, A2, A1, A0, 15, 14, 16, 10
-#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B6 }
+#define MATRIX_COL_PINS { B6, B2, B3, B1, F7, F6, F5, F4 }
 
 #define UNUSED_PINS
 

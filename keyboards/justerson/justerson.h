@@ -9,9 +9,13 @@
  *
  * The second converts the arguments into a two-dimensional array which
  * represents the switch matrix.
+ *
+ * Flash a new build to the keyboard https://docs.qmk.fm/#/newbs_flashing?id=flash-your-keyboard-from-the-command-line
+ * $ qmk flash -kb <my_keyboard> -km <my_keymap>
+ *
  */
 
-#define ____
+#define ____ KC_NO
 
 #define LAYOUT( \
     LH00, LH01, LH02, LH03, LH04, LH05, LH06, LH07,    RH00, RH01, RH02, RH03, RH04, RH05, RH06, RH07, \

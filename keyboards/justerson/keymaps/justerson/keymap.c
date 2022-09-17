@@ -27,8 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // KC_LEFT,  KC_RIGHT, KC_LSFT, KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,    // L4
         // KC_DOWN,  KC_LCTL,           KC_LOPT,  KC_LCMD,          KC_SPC,           // L5
 
-
-/* Right Rows
+/* Left Rows
  *
  * Yellow - 4
  * White - 6
@@ -37,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Yellow - 9
  */
 
-/* Right Columns
+/* Left Columns
  *
  * White - A3
  * Green - A2
@@ -47,4 +46,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Green - 14
  * Blue - 16
  * Yellow - 10
+ */
+
+/* Right Rows
+ *
+ * Yellow - 4
+ * Blue - 6
+ * Green - 7
+ * White - 8
+ * Yellow - 9
+ */
+
+/* Right Columns
+ *
+ * Yellow - A3
+ * Blue - A2
+ * Green - A1
+ * White - A0
+ * Yellow - 15
+ * Blue - 14
+ * Green - 16
+ * White - 10
  */

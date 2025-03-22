@@ -16,4 +16,4 @@
  
  % brew install qmk/qmk/qmk
  % qmk setup
- % qmk compile -kb justerson_studio_4x5 -km default
+ % qmk compile -kb justerson_studio_4x5 -km studio_4x5
